@@ -79,13 +79,13 @@ require([
         $body.addClass('search-loading');
 
         // Launch search query
-        throttle(gitbook.search.query(q, 0, MAX_RESULTS)
+        gitbook.search.query(q, 0, MAX_RESULTS)
         .then(function(results) {
             displayResults(results);
         })
         .always(function() {
             $body.removeClass('search-loading');
-        }), 1000);
+        });
     }
 
     function closeSearch() {
